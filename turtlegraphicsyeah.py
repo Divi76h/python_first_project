@@ -1,4 +1,5 @@
 import turtle
+from turtle import Turtle
 import math
 import random
 from random import randint
@@ -17,7 +18,8 @@ def main():
     print("3) Square inside a square(inside out)")
     print("4) Star\n5) Hexagon\n6) Sprial Helix\n7) Rainbow Benzene")
     print("8) Sunflower\n9) Honey Comb\n10) Gorgia Spiral")
-    print("11) Super Sprial\n12) Hologram\n13) Draw your own polygon")
+    print("11) Super Sprial\n12) Hologram\n13) Spider web\n14) Koch snowflake")
+    print("15) Draw your own polygon")
 
     option = input("\nEnter serial number : ")
     option = int(option)
@@ -59,6 +61,12 @@ def main():
         hologram()
 
     elif option == 13:
+        spiderWeb()
+
+    elif option == 14:
+        kochSnowflake()
+
+    elif option == 15:
         makeYourOwn()
 
     elif (option > 13 or option < 1):
@@ -536,6 +544,63 @@ def hologram():
             check_event()
 
         screen.fill((0, 0, 0))
+
+def spiderWeb():
+    y = input("please enter the colour : ")
+    y = str(y)
+    z = input("please enter the backgorund colour : ")
+    z = str(z)
+    x = turtle.Turtle()
+    x.speed(0)
+    x.color(y)
+    turtle.bgcolor(z)
+    b = 180
+    for c in range(5):
+        a = 9*c
+        for i in range(100):
+            x.circle(i, a)
+            x.right(b)
+            x.circle(i, a)
+            x.right(b)
+            x.circle(i, a)
+            x.right(b)
+            x.circle(i, a)
+
+    turtle.exitonclick()
+
+def kochSnowflake():
+    y = input("please enter the colour : ")
+    y = str(y)
+    z = input("please enter the backgorund colour : ")
+    z = str(z)
+    turtle.color(y)
+    turtle.bgcolor(z)
+    def snowflake(lengthSide, levels): 
+        if levels == 0: 
+            turtle.forward(lengthSide) 
+            return
+        lengthSide /= 3.0
+        snowflake(lengthSide, levels-1) 
+        turtle.left(60) 
+        snowflake(lengthSide, levels-1) 
+        turtle.right(120) 
+        snowflake(lengthSide, levels-1) 
+        turtle.left(60) 
+        snowflake(lengthSide, levels-1) 
+
+    turtle.speed(0)                    
+    length = 300.0   
+           
+    turtle.penup()                      
+  
+    turtle.backward(length/2.0) 
+      
+    turtle.pendown()            
+    for i in range(3):     
+        snowflake(length, 4) 
+        turtle.right(120)
+
+    turtle.exitonclick()
 
 
 if __name__ == "__main__":

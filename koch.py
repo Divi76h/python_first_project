@@ -2,9 +2,7 @@ from turtle import *
 
 
 # function to create koch snowflake or koch curve
-
-
-def snowflake(lengthSide, levels):
+def kochSnowflake(lengthSide, levels):
     if levels == 0:
         forward(lengthSide)
         return
@@ -18,25 +16,21 @@ def snowflake(lengthSide, levels):
     snowflake(lengthSide, levels-1)
 
 
+speed(0)
+length = 300.0
+
+
+penup()
+
+backward(length/2.0)
+
+
+pendown()
+for i in range(3):
+    kochSnowflake(length, 4)
+    right(120)
+
+
 # main function
 if __name__ == "__main__":
     # defining the speed of the turtle
-    speed(0)
-    length = 300.0
-
-    # Pull the pen up – no drawing when moving.
-    # Move the turtle backward by distance, opposite
-    # to the direction the turtle is headed.
-    # Do not change the turtle’s heading.
-    penup()
-
-    backward(length/2.0)
-
-    # Pull the pen down – drawing when moving.
-    pendown()
-    for i in range(3):
-        snowflake(length, 4)
-        right(120)
-
-     # To control the closing windows of the turtle
-    mainloop()
