@@ -209,10 +209,10 @@ def sprialHelix():
 
 
 def rainbowBenzene():
-    colors = ['red', 'purple', 'blue', 'green', 'orange', 'yellow']
+    colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
     t = turtle.Pen()
     turtle.bgcolor('black')
-    for x in range(270):
+    for x in range(720):
         t.pencolor(colors[x % 6])
         t.width(x/100 + 1)
         t.forward(x)
