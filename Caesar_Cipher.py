@@ -9,7 +9,7 @@ def main():
         print("you have chosen to encode")
         a = str(input("enter a string to encode : ")).lower()
         b = int(input("enter rotation (1 - 25) : "))
-        print(encode(a, b))
+        print("encoded word =", encode(a, b))
         quit()
     elif option == "d":
         print("you have chosen to decode")
