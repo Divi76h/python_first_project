@@ -1,7 +1,6 @@
 
 def Fibonacci(n, count):
     count += 1
-    print("count {0}".format(count))
     if n < 0:
         print("Incorrect input")
     elif n == 1:

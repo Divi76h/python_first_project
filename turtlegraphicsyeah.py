@@ -6,13 +6,17 @@ from random import randint
 import time
 import random as r
 import sys
-import pygame
 from math import pi, sin, cos, exp
-from pygame.locals import *
+
+try:
+    import pygame
+    from pygame.locals import *
+except:
+    print("\nPygame was not imported, therefore 'hologram' (12) will not work")
 
 
 def main():
-    print("This is a cool program for turtle graphics")
+    print("\nThis is a cool program for turtle graphics")
     print("\nMENU")
     print("1) Spirograph Star\n2) Square inside a square (outside in)")
     print("3) Square inside a square(inside out)")
@@ -544,6 +548,7 @@ def hologram():
             check_event()
 
         screen.fill((0, 0, 0))
+
 
 def spiderWeb():
     y = input("please enter the colour : ")

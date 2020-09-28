@@ -19,7 +19,7 @@ while(1):
     num = num+1
     if prime(num):
         pcnt = pcnt+1
-    if pcnt == 10:
+    if pcnt == 100000000:
         print(pcnt, 'th prime is', num)
         break
 
