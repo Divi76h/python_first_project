@@ -145,7 +145,6 @@ def changePassword(user):
         for index, usr in enumerate(data["users"]):
 
             if usr['username'] == user["username"]:
-
                 position = index
                 user["password"] = newpassword
                 break
